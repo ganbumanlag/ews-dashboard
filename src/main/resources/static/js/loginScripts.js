@@ -1,0 +1,20 @@
+function redirect() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    window.location.href = "/welcome?username=" + username + "&password=" + password;
+}
+
+!window.addEventListener('DOMContentLoaded', event => {
+
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+
+});
